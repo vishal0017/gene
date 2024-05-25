@@ -1,5 +1,4 @@
 import os
-import openai
 from openai import OpenAI
 from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
