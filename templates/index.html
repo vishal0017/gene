@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recipe Generator</h1>
+    <form action="/generate_recipe_and_image" method="post">
+        <label for="ingredients">Ingredients (comma separated):</label>
+        <input type="text" id="ingredients" name="ingredients" required><br><br>
+
+        <label for="num_people">Number of People:</label>
+        <input type="number" id="num_people" name="num_people" required><br><br>
+
+        <label for="allergies">Allergies (comma separated):</label>
+        <input type="text" id="allergies" name="allergies"><br><br>
+
+        <label for="lifestyle">Lifestyle:</label>
+        <input type="text" id="lifestyle" name="lifestyle"><br><br>
+
+        <button type="submit">Generate Recipe</button>
+    </form>
+
+    {% if recipe %}
+        <h2>Generated Recipe</h2>
+        <p>{{ recipe }}</p>
+        <!-- <img src="{{ image_url }}" alt="Generated Recipe Image"> -->
+    {% endif %}
+</body>
+</html>

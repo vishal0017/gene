@@ -1,0 +1,12 @@
+{
+  "name": "rec-gene",
+  "description": "A Flask web app that generates recipes and images using OpenAI.",
+  "image": "heroku/python",
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "API key for OpenAI",
+      "required": true
+    }
+  }
+}
